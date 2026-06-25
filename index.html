@@ -1,35 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-   
+  <head>
     <title>Task manager</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="addNewTaskContainer">
+      <p id="heading">TASK MANAGER</p>
 
+      <p id="addNewTask">Add new task</p>
+      <input type="text" id="taskInput" placeholder="Enter task" />
+    </div>
 
-<div id = "addNewTaskContainer">
-            <p id="heading">TASK MANAGER </p>
-        
-            <p id="addNewTask">Add new task</p>
-            <input 
-            type="text"
-            id="taskInput"
-            placeholder="Enter task"            
-            >
-</div>
-            
-            <button class="add-btn" onclick="addTask()">
-                Add task to list 
-            </button>
-        <br> <br>
-        
-        <h2>Your Tasks</h2>
-        <ul id="taskList"></ul>
-    <br>
-    
-        <button onclick="clearTask()">Clear all tasks?</button>
+    <button class="add-btn" onclick="addTask()">Add task to list</button>
+    <br />
+    <br />
+
+    <h2>Your Tasks</h2>
+    <ul id="taskList"></ul>
+    <br />
+
+    <button onclick="clearTask()">Clear all tasks?</button>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

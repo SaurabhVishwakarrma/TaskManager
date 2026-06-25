@@ -1,10 +1,7 @@
-// Initializing  tasks array from LocalStorage
+// Initialized tasks array from LocalStorage
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 let draggedIndex = null; // Track the index of the item being dragged
-
-
-
 
 displayTask();
 
@@ -18,7 +15,7 @@ function addTask() {
     return;
   }
 
-  // Push to the global tasks array (Fixes your local scope bug)
+  // Push to the global tasks array
   tasks.push({
     text: taskText,
     completed: false,
@@ -29,7 +26,7 @@ function addTask() {
   displayTask();
 }
 
-// Function to display tasks and attach drag/touch event listeners
+// Function to display tasks and attach drag/touch using event listeners
 function displayTask() {
   let list = document.getElementById("taskList");
   list.innerHTML = "";
@@ -39,7 +36,7 @@ function displayTask() {
     li.className = "task-item";
     li.setAttribute("data-index", i);
 
-    // Enable HTML5 drag for desktop and make it touch-safe
+    // HTML  drag for desktop and making it touch-safe
     li.draggable = true;
 
     li.innerHTML = `
@@ -69,7 +66,7 @@ function displayTask() {
     });
 
     li.addEventListener("dragover", (e) => {
-      e.preventDefault(); // Necessary to allow dropping
+      e.preventDefault();
     });
 
     li.addEventListener("drop", (e) => {
@@ -77,7 +74,6 @@ function displayTask() {
       handleDrop(i);
     });
 
-    // --- Mobile Touch Events (Cross-browser fallback) ---
     li.addEventListener(
       "touchstart",
       (e) => {
@@ -90,7 +86,7 @@ function displayTask() {
     li.addEventListener("touchend", (e) => {
       li.style.background = "white";
 
-      // Find which element the finger was lifted over
+      // Method to Find which element the finger was lifted over
       let touch = e.changedTouches[0];
       let targetEl = document.elementFromPoint(touch.clientX, touch.clientY);
       let targetLi = targetEl ? targetEl.closest(".task-item") : null;
