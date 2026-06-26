@@ -1,0 +1,23 @@
+{
+  "name": "taskmanager",
+  "version": "1.0.0",
+  "description": "So this task tracker is a very basic task tracker which allows these functions with the local storage of browser",
+  "main": "script.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaurabhVishwakarrma/TaskManager.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/SaurabhVishwakarrma/TaskManager/issues"
+  },
+  "homepage": "https://github.com/SaurabhVishwakarrma/TaskManager#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.0.1"
+  }
+}
